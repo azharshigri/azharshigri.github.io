@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Major Muhammad Azhar — Medical Officer, Pakistan Army</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --army-green: #1a2e1a;
+    --deep-olive: #2d4a2d;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #f5f0e8;
+    --warm-white: #faf8f4;
+    --text-dark: #1a1a1a;
+    --text-mid: #4a4a3a;
+    --text-light: #7a7a6a;
+    --border: rgba(201,168,76,0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(26,46,26,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+  }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--army-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 8rem 5rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(201,168,76,0.03) 40px,
+      rgba(201,168,76,0.03) 42px
+    );
+  }
+
+  .hero-rank {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-rank::before {
+    content: '';
+    width: 3rem;
+    height: 1px;
+    background: var(--gold);
+    display: inline-block;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(245,240,232,0.6);
+    letter-spacing: 0.08em;
+    line-height: 1.7;
+    max-width: 340px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.75rem 1.5rem;
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+
+  .hero-badge .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  .hero-right {
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8rem 5rem;
+    position: relative;
+  }
+
+  .crescent-motif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 380px;
+    opacity: 0.06;
+  }
+
+  .stat-block {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .stat {
+    border-left: 2px solid var(--gold);
+    padding-left: 2rem;
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 0.05em;
+    color: var(--army-green);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 7rem 0; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+  }
+
+  .section-tag {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    font-weight: 300;
+    color: var(--army-green);
+    line-height: 1.1;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--warm-white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--text-mid);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p strong {
+    font-weight: 500;
+    color: var(--army-green);
+  }
+
+  .about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+
+  .detail-row:first-child { border-top: 1px solid rgba(0,0,0,0.07); }
+
+  .detail-key {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .detail-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--army-green);
+    text-align: right;
+  }
+
+  /* ── EDUCATION ── */
+  #education { background: var(--army-green); }
+
+  #education .section-title { color: var(--cream); }
+  #education .section-tag { color: var(--gold); }
+
+  .edu-timeline {
+    position: relative;
+    padding-left: 3rem;
+  }
+
+  .edu-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .edu-item {
+    position: relative;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .edu-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .edu-item::before {
+    content: '';
+    position: absolute;
+    left: -3rem;
+    top: 0.5rem;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    transform: translateX(calc(-50% + 0.5px));
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
+  }
+
+  .edu-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .edu-institute {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 1rem;
+  }
+
+  .edu-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(245,240,232,0.65);
+    max-width: 600px;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--cream); }
+
+  .exp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: rgba(0,0,0,0.08);
+    border: 2px solid rgba(0,0,0,0.08);
+  }
+
+  .exp-card {
+    background: var(--warm-white);
+    padding: 3rem;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .exp-card:hover { background: #fff; }
+
+  .exp-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 3rem;
+    width: 0; height: 2px;
+    background: var(--gold);
+    transition: width 0.4s;
+  }
+
+  .exp-card:hover::after { width: calc(100% - 6rem); }
+
+  .exp-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .exp-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--army-green);
+    margin-bottom: 0.4rem;
+  }
+
+  .exp-org {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .exp-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-mid);
+  }
+
+  .exp-location {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--army-green);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #contact::before {
+    content: '';
+    position: absolute;
+    right: -10rem; top: -10rem;
+    width: 50rem; height: 50rem;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+
+  #contact::after {
+    content: '';
+    position: absolute;
+    right: -5rem; top: -5rem;
+    width: 30rem; height: 30rem;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.08);
+  }
+
+  #contact .section-title { color: var(--cream); }
+  #contact .section-tag { color: var(--gold); }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+  }
+
+  .contact-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 3rem; height: 3rem;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    color: var(--gold);
+  }
+
+  .contact-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-value {
+    font-size: 0.95rem;
+    color: var(--cream);
+    font-weight: 300;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .form-group label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 0.9rem 1.2rem;
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+    border-radius: 0;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(245,240,232,0.3); }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.07);
+  }
+
+  .btn-submit {
+    margin-top: 0.5rem;
+    background: var(--gold);
+    color: var(--army-green);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    align-self: flex-start;
+  }
+
+  .btn-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0f1a0f;
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: rgba(245,240,232,0.5);
+    font-weight: 300;
+  }
+
+  .footer-text {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+    font-weight: 400;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 8rem 2rem 5rem; min-height: 100vh; justify-content: center; }
+    .container { padding: 0 2rem; }
+    .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .exp-grid { grid-template-columns: 1fr; }
+    section { padding: 5rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Maj. M. Azhar</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-rank">Pakistan Army Medical Corps</div>
+    <h1 class="hero-name">Muhammad<br><em>Azhar</em></h1>
+    <p class="hero-subtitle">Medical Officer committed to excellence in military healthcare, serving with distinction in Pakistan and the Kingdom of Saudi Arabia.</p>
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Currently Posted — KSA
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg class="crescent-motif" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="90" stroke="#1a2e1a" stroke-width="2"/>
+      <path d="M100 20 A80 80 0 1 0 100 180 A55 55 0 1 1 100 20Z" fill="#1a2e1a"/>
+    </svg>
+    <div class="stat-block">
+      <div class="stat fade-in">
+        <div class="stat-number">MBBS</div>
+        <div class="stat-label">Army Medical College, Rawalpindi</div>
+      </div>
+      <div class="stat fade-in" style="transition-delay:0.15s">
+        <div class="stat-number">MAJ</div>
+        <div class="stat-label">Commissioned Rank, Pakistan Army</div>
+      </div>
+      <div class="stat fade-in" style="transition-delay:0.3s">
+        <div class="stat-number">KSA</div>
+        <div class="stat-label">Current Deployment — Saudi Arabia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">01</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>I am <strong>Major Muhammad Azhar</strong>, a commissioned Medical Officer in the Pakistan Army with a dedication to delivering exemplary healthcare in demanding operational environments.</p>
+        <p>Trained at the prestigious <strong>Army Medical College (AMC), Rawalpindi</strong>, I hold an MBBS degree and have been entrusted with critical medical responsibilities across diverse postings — most recently serving in the <strong>Kingdom of Saudi Arabia</strong>.</p>
+        <p>My service is guided by the core values of the Pakistan Army: discipline, professionalism, and an unwavering commitment to the well-being of the men and women I serve alongside.</p>
+      </div>
+      <div class="about-details fade-in">
+        <div class="detail-row">
+          <span class="detail-key">Full Name</span>
+          <span class="detail-val">Major Muhammad Azhar</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Corps</span>
+          <span class="detail-val">Army Medical Corps</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Rank</span>
+          <span class="detail-val">Major</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Qualification</span>
+          <span class="detail-val">MBBS</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Institution</span>
+          <span class="detail-val">AMC, Rawalpindi</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Current Posting</span>
+          <span class="detail-val">Kingdom of Saudi Arabia</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Nationality</span>
+          <span class="detail-val">Pakistani</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">02</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="edu-timeline">
+      <div class="edu-item fade-in">
+        <div class="edu-year">MBBS · Army Medical College</div>
+        <div class="edu-degree">Bachelor of Medicine,<br>Bachelor of Surgery</div>
+        <div class="edu-institute">Army Medical College (AMC) — Rawalpindi, Pakistan</div>
+        <p class="edu-desc">Completed the MBBS programme at one of Pakistan's most prestigious military medical institutions, affiliated with the National University of Medical Sciences (NUMS). Rigorous clinical and academic training under the Pakistan Army's high standards of medical excellence.</p>
+      </div>
+      <div class="edu-item fade-in">
+        <div class="edu-year">Military Officer Training</div>
+        <div class="edu-degree">Pakistan Military Academy<br>&amp; Army Induction</div>
+        <div class="edu-institute">Pakistan Army — Commissioned Officer</div>
+        <p class="edu-desc">Underwent comprehensive officer training as part of commissioning into the Pakistan Army Medical Corps. Trained in military leadership, field medicine, and operational healthcare management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">03</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card fade-in">
+        <div class="exp-icon">🏥</div>
+        <div class="exp-role">Medical Officer</div>
+        <div class="exp-org">Pakistan Army · Active Service</div>
+        <p class="exp-desc">Providing comprehensive primary and emergency medical care to military personnel. Responsible for health surveillance, sick parade management, and clinical decision-making in operational environments.</p>
+        <div class="exp-location">📍 Kingdom of Saudi Arabia (Current)</div>
+      </div>
+      <div class="exp-card fade-in">
+        <div class="exp-icon">🌍</div>
+        <div class="exp-role">Deployed Medical Officer</div>
+        <div class="exp-org">KSA Deployment · Pakistan Army Mission</div>
+        <p class="exp-desc">Serving as a Medical Officer on international deployment to the Kingdom of Saudi Arabia, providing military medical support and fostering Pakistan–Saudi Arabia defence cooperation in healthcare.</p>
+        <div class="exp-location">📍 Saudi Arabia</div>
+      </div>
+      <div class="exp-card fade-in">
+        <div class="exp-icon">🩺</div>
+        <div class="exp-role">Clinical Physician</div>
+        <div class="exp-org">Army Medical Facility · Pakistan</div>
+        <p class="exp-desc">Managed outpatient and inpatient cases, conducted medical examinations for service personnel, and coordinated referral pathways within the military healthcare system across various domestic postings.</p>
+        <div class="exp-location">📍 Pakistan</div>
+      </div>
+      <div class="exp-card fade-in">
+        <div class="exp-icon">📋</div>
+        <div class="exp-role">Medical Administration</div>
+        <div class="exp-org">Army Medical Corps · Pakistan Army</div>
+        <p class="exp-desc">Handled medical administrative responsibilities including maintaining medical records, overseeing unit health statistics, coordinating with senior medical officers, and ensuring compliance with army medical directives.</p>
+        <div class="exp-location">📍 Pakistan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">04</span>
+      <h2 class="section-title">Get in Touch</h2>
+    </div>
+    <div class="contact-layout">
+      <div>
+        <p class="contact-intro">"Service, sacrifice, and the science of healing — these are the pillars that define my calling as a military physician."</p>
+        <div class="contact-item fade-in">
+          <div class="contact-icon">✉</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">your.email@example.com</div>
+          </div>
+        </div>
+        <div class="contact-item fade-in">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Current Location</div>
+            <div class="contact-value">Kingdom of Saudi Arabia</div>
+          </div>
+        </div>
+        <div class="contact-item fade-in">
+          <div class="contact-icon">🏛</div>
+          <div>
+            <div class="contact-label">Organisation</div>
+            <div class="contact-value">Pakistan Army — Army Medical Corps</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form fade-in">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="Regarding...">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5" placeholder="Your message here..."></textarea>
+        </div>
+        <button class="btn-submit">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Major Muhammad Azhar · MBBS · Pakistan Army</div>
+  <div class="footer-text">Army Medical Corps &nbsp;·&nbsp; Kingdom of Saudi Arabia</div>
+</footer>
+
+<script>
+  // Scroll-triggered animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Nav active link highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 200) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.opacity = a.getAttribute('href') === `#${current}` ? '1' : '0.65';
+      a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--gold-light)' : '';
+    });
+  });
+</script>
+</body>
+</html>
